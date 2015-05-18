@@ -8,6 +8,7 @@
 
 import UIKit
 import EventKit
+import Timepiece
 
 private let _EventManagerSharedInstance = EventManager()
 
@@ -15,10 +16,10 @@ class EventManager {
     static let sharedInstance = EventManager()
     private let eventStore = EKEventStore()
     
-    func getEvents() -> NSArray {
+    func getCalendars() -> Array<AnyObject> {
         let calendars = self.eventStore.calendarsForEntityType(EKEntityTypeEvent)
         
-        return calendars;
+        return calendars
     }
     
     func requestAccess() {

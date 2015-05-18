@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ttf-dx-3RR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Events View Controller-->
@@ -13,22 +14,55 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.91517657041549683" green="0.92979288101196289" blue="0.9525342583656311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vFD-pl-5Re">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="itemSize" width="320" height="100"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WJx-fu-Rey">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventCell" id="WJx-fu-Rey" customClass="EventCell" customModule="Almanac" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFi-Sd-KZW">
+                                            <rect key="frame" x="8" y="8" width="230" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="230" id="vFn-zC-FR0"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Detail Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7w-wa-UkT">
+                                            <rect key="frame" x="8" y="32" width="304" height="40"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="u7w-wa-UkT" firstAttribute="leading" secondItem="WJx-fu-Rey" secondAttribute="leadingMargin" id="4lG-FX-fLS"/>
+                                    <constraint firstItem="FFi-Sd-KZW" firstAttribute="leading" secondItem="WJx-fu-Rey" secondAttribute="leadingMargin" id="Aqi-AT-byu"/>
+                                    <constraint firstItem="u7w-wa-UkT" firstAttribute="trailing" secondItem="WJx-fu-Rey" secondAttribute="trailingMargin" id="bV2-vw-BJv"/>
+                                    <constraint firstItem="FFi-Sd-KZW" firstAttribute="top" secondItem="WJx-fu-Rey" secondAttribute="topMargin" id="hyC-6A-uap"/>
+                                    <constraint firstItem="u7w-wa-UkT" firstAttribute="bottom" secondItem="WJx-fu-Rey" secondAttribute="bottomMargin" constant="-20" id="sO1-LQ-1nw"/>
+                                    <constraint firstItem="u7w-wa-UkT" firstAttribute="top" secondItem="FFi-Sd-KZW" secondAttribute="bottom" id="y0u-Ly-IDe"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="detailLabel" destination="u7w-wa-UkT" id="9I6-Ej-mro"/>
+                                    <outlet property="titleLabel" destination="FFi-Sd-KZW" id="FyU-Ri-E2e"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="weU-kY-Xtf">
+                            <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="YJ8-UN-aHn" id="XbG-qs-oa6"/>
                             <outlet property="delegate" destination="YJ8-UN-aHn" id="cHq-bQ-oFd"/>
