@@ -14,6 +14,7 @@
 		636185D11B0963E900E05BD6 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636185D01B0963E900E05BD6 /* EventCell.swift */; };
 		63AB00AA1B080B9F00FA2C88 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AB00A91B080B9F00FA2C88 /* EventManager.swift */; };
 		63AB00AC1B0812F300FA2C88 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AB00AB1B0812F300FA2C88 /* EventsViewController.swift */; };
+		63B45E0F1B0E578000060DD1 /* CalendarViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B45E0E1B0E578000060DD1 /* CalendarViewFlowLayout.swift */; };
 		9BD7C359A82237E6129DBCD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D36F4E2F2C753214054335 /* Foundation.framework */; };
 		AD1E50D8239B699B9CD5545B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D5FD0FF6CFEBC182C50EB0 /* AppDelegate.swift */; };
 		D7F58E06EDFD85E3EB0E43D9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8F27E29F875A0FD81B9CC0EF /* Settings.bundle */; };
@@ -40,8 +41,9 @@
 		50D27DF32B80668E771E5D6B /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		53E256A9DC0E105F411D8D47 /* Main.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		636185D01B0963E900E05BD6 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
-		63AB00A91B080B9F00FA2C88 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
+		63AB00A91B080B9F00FA2C88 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventManager.swift; path = ../Controllers/EventManager.swift; sourceTree = "<group>"; };
 		63AB00AB1B0812F300FA2C88 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		63B45E0E1B0E578000060DD1 /* CalendarViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewFlowLayout.swift; sourceTree = "<group>"; };
 		7C77E345F51502277A5D32A6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8F27E29F875A0FD81B9CC0EF /* Settings.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9370A928E4CA943B15B45883 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		0BB29ADE036B17B393590D7D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				63B45E0E1B0E578000060DD1 /* CalendarViewFlowLayout.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -172,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				12D5FD0FF6CFEBC182C50EB0 /* AppDelegate.swift */,
-				63AB00A91B080B9F00FA2C88 /* EventManager.swift */,
 				63AB00AB1B0812F300FA2C88 /* EventsViewController.swift */,
 			);
 			path = Controllers;
@@ -210,6 +212,7 @@
 		8731B4F67D153EC6A93F88FE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				63AB00A91B080B9F00FA2C88 /* EventManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 			files = (
 				AD1E50D8239B699B9CD5545B /* AppDelegate.swift in Sources */,
 				3619A70D810AC024B950FCED /* Main.storyboard in Sources */,
+				63B45E0F1B0E578000060DD1 /* CalendarViewFlowLayout.swift in Sources */,
 				63AB00AA1B080B9F00FA2C88 /* EventManager.swift in Sources */,
 				4CD6589EA000E34F9B7150EF /* LaunchScreen.xib in Sources */,
 				636185D11B0963E900E05BD6 /* EventCell.swift in Sources */,
@@ -589,6 +593,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Almanac/Resources/Other-Sources/Info.plist";
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
@@ -607,6 +612,7 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "Almanac/Resources/Other-Sources/Info.plist";
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = (
 					"-DNS_BLOCK_ASSERTIONS=1",

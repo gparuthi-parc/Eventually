@@ -12,9 +12,9 @@ import UIKit
 class EventCell: UICollectionViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var detailLabel: UILabel!
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.backgroundColor = UIColor.whiteColor()
     }
 }
