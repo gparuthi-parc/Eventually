@@ -1,19 +1,25 @@
 PODS:
+  - Cartography (0.5.0)
   - Expecta (1.0.0)
+  - Motif (0.1.2)
   - OCMock (3.1.2)
   - OHHTTPStubs (4.0.1)
   - Specta (1.0.0)
   - Timepiece (0.3.2)
 
 DEPENDENCIES:
+  - Cartography
   - Expecta
+  - Motif
   - OCMock
   - OHHTTPStubs
   - Specta
   - Timepiece
 
 SPEC CHECKSUMS:
+  Cartography: 774e5cc446f5a6bca5d4345c5aa6af9a1fe74dc6
   Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
+  Motif: 019df12cd6f816bbfafaa9363b21a1158b8efb5a
   OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
   OHHTTPStubs: 69b1d48b7dfe838a355fdf48d8592d1042e3d85f
   Specta: 96fe05fe5c7348b5223f85e862904f6e832abb14

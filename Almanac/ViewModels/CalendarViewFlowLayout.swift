@@ -9,5 +9,19 @@
 import UIKit
 
 class CalendarViewFlowLayout: UICollectionViewFlowLayout {
-   
+    
+    override init() {
+        super.init()
+        self.itemSize = CGSizeMake(320, 60)
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init()
+        println("Intialized")
+    }
+    
+    override func collectionViewContentSize() -> CGSize {
+        let contentWidth = self.collectionView?.bounds.size.width as CGFloat!
+        return CGSizeMake(contentWidth, 100)
+    }
 }

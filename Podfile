@@ -5,6 +5,8 @@ use_frameworks!
 
 # Add Application pods here
 pod "Timepiece"
+pod "Motif"
+pod "Cartography"
 
 target :unit_tests, :exclusive => true do
   link_with 'UnitTests'
