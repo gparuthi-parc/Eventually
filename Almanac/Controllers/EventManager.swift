@@ -13,33 +13,25 @@ import Timepiece
 class EventManager {
     static let sharedInstance = EventManager()
     private let eventStore = EKEventStore()
-    
-    init() {
-        
-    }
-    
+
     func getCalendars() -> Array<AnyObject> {
         let calendars = self.eventStore.calendarsForEntityType(EKEntityTypeEvent)
-        
+
         return calendars
     }
-    
-    func getEvents(start: NSDate, end: NSDate) -> Array<EKEvent> {
-        let now = NSDate()
-        let lastWeek = now - 1.week
-        let nextWeek = now + 1.week
-        
-        let eventsPredicate = eventStore.predicateForEventsWithStartDate(now, endDate: nextWeek, calendars: nil)
+
+    func getEvents(start: NSDate, end: NSDate) -> Array<AnyObject> {
+        let eventsPredicate = eventStore.predicateForEventsWithStartDate(start, endDate: end, calendars: nil)
         let results = self.eventStore.eventsMatchingPredicate(eventsPredicate)
         
-        return results as! Array<EKEvent>;
+        return results
     }
-    
+
     func requestAccess() {
         let store = EKEventStore()
-        
+
         store.requestAccessToEntityType(EKEntityTypeEvent, completion: { (granted, error) -> Void in
-            
+
         })
     }
 }
