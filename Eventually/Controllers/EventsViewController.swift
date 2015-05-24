@@ -21,9 +21,9 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         let now = NSDate()
-        self.dataStore = self.getEvents(  now - 1.week
-                                        , end: now + 1.week
-                                        , eventStore: self.eventStore  )
+        self.dataStore = self.getEvents(now - 1.week, end: now + 1.week, eventStore: self.eventStore)
+        
+        println(self.dataStore)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -52,17 +52,16 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
         for event in allEvents {
             dates.append(event.startDate)
         }
-    }
-
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        var dates = [NSDate]()
-        for event in self.dataStore {
-            dates.append(event.startDate)
-        }
-        let uniqueDates = Set(dates)
+        let uniqueDates = Array(Set(dates))
         
-        println(Array(uniqueDates).count)
-        return Array(uniqueDates).count
+        var eventsDictionary = Dictionary<NSDate, [EKEvent]>()
+        for date in uniqueDates {
+            let dayPredicate = eventStore.predicateForEventsWithStartDate(date, endDate: date + 1.day, calendars: nil)
+            let eventsForDate = eventStore.eventsMatchingPredicate(dayPredicate) as! [EKEvent]
+            eventsDictionary[date] = eventsForDate
+        }
+        
+        return eventsDictionary
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -71,7 +70,6 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> EventCell {
         let cell : EventCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! EventCell
-        cell.titleLabel.text = dataStore[indexPath.row].title
         
         return cell
     }

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BF50A99B50C0FF2B1698C756"
-               BuildableName = "Almanac.app"
-               BlueprintName = "Almanac"
-               ReferencedContainer = "container:Almanac.xcodeproj">
+               BuildableName = "Eventually.app"
+               BlueprintName = "Eventually"
+               ReferencedContainer = "container:Eventually.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "18078A995ED81A9BF8215B5E"
                BuildableName = "UnitTests.xctest"
                BlueprintName = "UnitTests"
-               ReferencedContainer = "container:Almanac.xcodeproj">
+               ReferencedContainer = "container:Eventually.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF50A99B50C0FF2B1698C756"
-            BuildableName = "Almanac.app"
-            BlueprintName = "Almanac"
-            ReferencedContainer = "container:Almanac.xcodeproj">
+            BuildableName = "Eventually.app"
+            BlueprintName = "Eventually"
+            ReferencedContainer = "container:Eventually.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,9 +63,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF50A99B50C0FF2B1698C756"
-            BuildableName = "Almanac.app"
-            BlueprintName = "Almanac"
-            ReferencedContainer = "container:Almanac.xcodeproj">
+            BuildableName = "Eventually.app"
+            BlueprintName = "Eventually"
+            ReferencedContainer = "container:Eventually.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF50A99B50C0FF2B1698C756"
-            BuildableName = "Almanac.app"
-            BlueprintName = "Almanac"
-            ReferencedContainer = "container:Almanac.xcodeproj">
+            BuildableName = "Eventually.app"
+            BlueprintName = "Eventually"
+            ReferencedContainer = "container:Eventually.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -17,7 +17,6 @@ target :unit_tests, :exclusive => true do
   pod 'OHHTTPStubs'
 end
 
-
 # Copy acknowledgements to the Settings.bundle
 
 post_install do | installer |
