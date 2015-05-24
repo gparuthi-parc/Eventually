@@ -9,18 +9,21 @@
 import UIKit
 import EventKit
 import Timepiece
+import Dollar
 
 class EventsViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     let eventStore = EKEventStore()
     let reuseIdentifier = "EventCell"
-    var backingArray = [EKEvent]()
+    var dataStore = Dictionary<NSDate, Array<EKEvent>>()
 
     // MARK: - View lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let now = NSDate()
-        self.backingArray = self.getEvents(now - 1.week, end: now + 1.week)
+        self.dataStore = self.getEvents(  now - 1.week
+                                        , end: now + 1.week
+                                        , eventStore: self.eventStore  )
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -40,24 +43,35 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
 
     // MARK: - Collection view data source
     
-    func getEvents(start: NSDate, end: NSDate) -> Array<EKEvent> {
+    func getEvents(start: NSDate, end: NSDate, eventStore: EKEventStore) -> Dictionary<NSDate, Array<EKEvent>> {
         let eventsPredicate = eventStore.predicateForEventsWithStartDate(start, endDate: end, calendars: nil)
-        let results = self.eventStore.eventsMatchingPredicate(eventsPredicate) as! [EKEvent]
+        let allEvents = eventStore.eventsMatchingPredicate(eventsPredicate) as! [EKEvent]
         
-        return results
+        // time to get all unique dates...
+        var dates = [NSDate]()
+        for event in allEvents {
+            dates.append(event.startDate)
+        }
     }
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+        var dates = [NSDate]()
+        for event in self.dataStore {
+            dates.append(event.startDate)
+        }
+        let uniqueDates = Set(dates)
+        
+        println(Array(uniqueDates).count)
+        return Array(uniqueDates).count
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return backingArray.count
+        return dataStore.count
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> EventCell {
         let cell : EventCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! EventCell
-        cell.titleLabel.text = backingArray[indexPath.row].title
+        cell.titleLabel.text = dataStore[indexPath.row].title
         
         return cell
     }

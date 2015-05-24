@@ -1,5 +1,6 @@
 PODS:
   - Cartography (0.5.0)
+  - Dollar (3.0.0)
   - Expecta (1.0.0)
   - Motif (0.1.2)
   - OCMock (3.1.2)
@@ -9,6 +10,7 @@ PODS:
 
 DEPENDENCIES:
   - Cartography
+  - Dollar
   - Expecta
   - Motif
   - OCMock
@@ -18,6 +20,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Cartography: 774e5cc446f5a6bca5d4345c5aa6af9a1fe74dc6
+  Dollar: 4df780ce1baa410d71e423fee07646abb1106909
   Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
   Motif: 019df12cd6f816bbfafaa9363b21a1158b8efb5a
   OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92

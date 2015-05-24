@@ -4,9 +4,10 @@ platform :ios, '8.0'
 use_frameworks!
 
 # Add Application pods here
-pod "Timepiece"
-pod "Motif"
-pod "Cartography"
+pod 'Timepiece'
+pod 'Motif'
+pod 'Cartography'
+pod 'Dollar'
 
 target :unit_tests, :exclusive => true do
   link_with 'UnitTests'
