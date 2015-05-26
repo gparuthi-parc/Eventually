@@ -12,4 +12,9 @@ import EventKit
 struct EventCollection {
     var day = NSDate()
     var events = [EKEvent]()
+    
+    init(day: NSDate, events: Array<EKEvent>) {
+        self.day = day
+        self.events = events
+    }
 }

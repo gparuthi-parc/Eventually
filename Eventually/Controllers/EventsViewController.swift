@@ -44,21 +44,18 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
     // MARK: - Collection view data source
     
     func getEvents(start: NSDate, end: NSDate, eventStore: EKEventStore) -> Array<EventCollection> {
-        let eventsPredicate = eventStore.predicateForEventsWithStartDate(start, endDate: end, calendars: nil)
-        let allEvents = eventStore.eventsMatchingPredicate(eventsPredicate) as! [EKEvent]
         let allDates = rangeOfDates(start, endDate: end)
+        var allEvents = Array<EventCollection>()
         
-        var events = Array<EventCollection>()
         for date in allDates {
             let dayPredicate = eventStore.predicateForEventsWithStartDate(date, endDate: date + 1.day, calendars: nil)
-            var instance = EventCollection()
-            instance.day = date
-            instance.events = eventStore.eventsMatchingPredicate(dayPredicate) as! [EKEvent]
-
-            events.append(instance)
+            let events = eventStore.eventsMatchingPredicate(dayPredicate) as! [EKEvent]
+            
+            var instance = EventCollection(day: date, events: events)
+            allEvents.append(instance)
         }
         
-        return events
+        return allEvents
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
