@@ -1,34 +1,22 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
+import Timepiece
 
-enum CountdownType: Int { case ToTheSecond, ToTheDay }
-enum ColorScheme: Int { case AfterMidnight, ClassyYellow, Tealfish }
-
-class Concern {
-    var title: String = ""
-    func title(aTitle: String?) -> Concern {
-        title = aTitle ?? ""; return self
+func rangeOfDates(startDate : NSDate, endDate : NSDate) -> Array<NSDate> {
+    var dates = [NSDate]()
+    var currentDate = startDate
+    
+    while currentDate < endDate {
+        dates.append(currentDate)
+        currentDate = currentDate + 1.day
     }
     
-    var subtitle = ""
-    func subtitle(aSubtitle: String?) -> Concern {
-        subtitle = aSubtitle ?? ""; return self
-    }
-
-    var countdownType: CountdownType = .ToTheSecond
-    func countdownType(type: CountdownType) -> Concern {
-        countdownType = type; return self
-    }
-    
-    var colorScheme: ColorScheme = .AfterMidnight
-    func colorScheme(scheme: ColorScheme) -> Concern {
-        colorScheme = scheme; return self
-    }
+    return dates
 }
 
-Concern()
-    .title("Big Meeting")
-    .subtitle("With those people")
-    .countdownType(.ToTheDay)
-    .colorScheme(.Tealfish)
+let startDate = NSDate()
+let endDate = startDate + 2.weeks
+
+let dates = rangeOfDates(startDate, endDate)
+println(dates)

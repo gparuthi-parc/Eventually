@@ -14,7 +14,7 @@ import Dollar
 class EventsViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     let eventStore = EKEventStore()
     let reuseIdentifier = "EventCell"
-    var dataStore = Dictionary<NSDate, Array<EKEvent>>()
+    var dataStore = Array<EventCollection>()
 
     // MARK: - View lifecycle
 
@@ -43,25 +43,22 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
 
     // MARK: - Collection view data source
     
-    func getEvents(start: NSDate, end: NSDate, eventStore: EKEventStore) -> Dictionary<NSDate, Array<EKEvent>> {
+    func getEvents(start: NSDate, end: NSDate, eventStore: EKEventStore) -> Array<EventCollection> {
         let eventsPredicate = eventStore.predicateForEventsWithStartDate(start, endDate: end, calendars: nil)
         let allEvents = eventStore.eventsMatchingPredicate(eventsPredicate) as! [EKEvent]
+        let allDates = rangeOfDates(start, endDate: end)
         
-        // time to get all unique dates...
-        var dates = [NSDate]()
-        for event in allEvents {
-            dates.append(event.startDate)
-        }
-        let uniqueDates = Array(Set(dates))
-        
-        var eventsDictionary = Dictionary<NSDate, [EKEvent]>()
-        for date in uniqueDates {
+        var events = Array<EventCollection>()
+        for date in allDates {
             let dayPredicate = eventStore.predicateForEventsWithStartDate(date, endDate: date + 1.day, calendars: nil)
-            let eventsForDate = eventStore.eventsMatchingPredicate(dayPredicate) as! [EKEvent]
-            eventsDictionary[date] = eventsForDate
+            var instance = EventCollection()
+            instance.day = date
+            instance.events = eventStore.eventsMatchingPredicate(dayPredicate) as! [EKEvent]
+
+            events.append(instance)
         }
         
-        return eventsDictionary
+        return events
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -71,6 +68,22 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> EventCell {
         let cell : EventCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! EventCell
         
+        cell.titleLabel.text = "poop"
+        cell.dateLabel.text = "date"
+        
         return cell
+    }
+    
+    // MARK: - Helper
+    func rangeOfDates(startDate : NSDate, endDate : NSDate) -> Array<NSDate> {
+        var dates = [NSDate]()
+        var currentDate = startDate
+        
+        while currentDate < endDate {
+            dates.append(currentDate)
+            currentDate = currentDate + 1.day
+        }
+        
+        return dates
     }
 }

@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oQ5-dI-J93">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Events View Controller-->
@@ -25,27 +24,8 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuW-ge-9ac">
-                                            <rect key="frame" x="8" y="14" width="304" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="lqO-Be-xrD"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <constraints>
-                                    <constraint firstItem="QuW-ge-9ac" firstAttribute="trailing" secondItem="z60-aI-Cvz" secondAttribute="trailingMargin" id="NX0-dk-e5V"/>
-                                    <constraint firstAttribute="centerY" secondItem="QuW-ge-9ac" secondAttribute="centerY" constant="0.5" id="Q49-Ra-IpZ"/>
-                                    <constraint firstItem="QuW-ge-9ac" firstAttribute="leading" secondItem="z60-aI-Cvz" secondAttribute="leadingMargin" id="QNf-su-h6h"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="titleLabel" destination="QuW-ge-9ac" id="X9r-fp-pD9"/>
-                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

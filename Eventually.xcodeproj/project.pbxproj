@@ -17,6 +17,7 @@
 		632C54A11B1226FF00FAD55E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 632C54931B1226FF00FAD55E /* Settings.bundle */; };
 		632C54A21B1226FF00FAD55E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632C54941B1226FF00FAD55E /* Main.storyboard */; };
 		632C54A31B1226FF00FAD55E /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632C54981B1226FF00FAD55E /* EventCell.swift */; };
+		63485D0A1B13FB5E004CCF63 /* EventCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63485D091B13FB5E004CCF63 /* EventCollection.swift */; };
 		9BD7C359A82237E6129DBCD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D36F4E2F2C753214054335 /* Foundation.framework */; };
 		F6B30D09B2728C9F074CD9C1 /* Pods_unit_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CB7E8D93C187BBEC6EC18A /* Pods_unit_tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 		632C54941B1226FF00FAD55E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		632C54981B1226FF00FAD55E /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		632C54A61B12717200FAD55E /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = TestPlayground.playground; path = Eventually/TestPlayground.playground; sourceTree = SOURCE_ROOT; };
+		63485D091B13FB5E004CCF63 /* EventCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventCollection.swift; path = Eventually/EventCollection.swift; sourceTree = SOURCE_ROOT; };
 		7C77E345F51502277A5D32A6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AF5AB66C3E9BBB12D6543D2F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D30C054156418424DFF3954B /* UnitTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
@@ -223,11 +225,20 @@
 				632C548A1B1226FF00FAD55E /* Models */,
 				632C54881B1226FF00FAD55E /* Controllers */,
 				632C54971B1226FF00FAD55E /* ViewModels */,
+				63485D0B1B13FB65004CCF63 /* Types */,
 				632C54991B1226FF00FAD55E /* Views */,
 				632C548B1B1226FF00FAD55E /* Protocols */,
 				632C54961B1226FF00FAD55E /* Resources */,
 			);
 			path = Eventually;
+			sourceTree = "<group>";
+		};
+		63485D0B1B13FB65004CCF63 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				63485D091B13FB5E004CCF63 /* EventCollection.swift */,
+			);
+			name = Types;
 			sourceTree = "<group>";
 		};
 		7C0FCFA3A6188177AC54EB96 /* Helpers */ = {
@@ -505,6 +516,7 @@
 				632C549C1B1226FF00FAD55E /* EventManager.swift in Sources */,
 				632C549B1B1226FF00FAD55E /* AppDelegate.swift in Sources */,
 				632C549D1B1226FF00FAD55E /* EventsViewController.swift in Sources */,
+				63485D0A1B13FB5E004CCF63 /* EventCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
