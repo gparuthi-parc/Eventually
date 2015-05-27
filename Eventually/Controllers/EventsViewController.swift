@@ -22,8 +22,6 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
         super.viewDidLoad()
         let now = NSDate()
         self.dataStore = self.getEvents(now - 1.week, end: now + 1.week, eventStore: self.eventStore)
-        
-        println(self.dataStore)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -44,15 +42,16 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
     // MARK: - Collection view data source
     
     func getEvents(start: NSDate, end: NSDate, eventStore: EKEventStore) -> Array<EventCollection> {
-        let allDates = rangeOfDates(start, endDate: end)
+        let allDates = NSDate.getRangeForDates(start, endDate: end)
         var allEvents = Array<EventCollection>()
         
         for date in allDates {
             let dayPredicate = eventStore.predicateForEventsWithStartDate(date, endDate: date + 1.day, calendars: nil)
-            let events = eventStore.eventsMatchingPredicate(dayPredicate) as! [EKEvent]
             
-            var instance = EventCollection(day: date, events: events)
-            allEvents.append(instance)
+            if let events = eventStore.eventsMatchingPredicate(dayPredicate) {
+                var instance = EventCollection(day: date, events: events as! [EKEvent])
+                allEvents.append(instance)
+            }
         }
         
         return allEvents
@@ -64,23 +63,9 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> EventCell {
         let cell : EventCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! EventCell
-        
-        cell.titleLabel.text = "poop"
-        cell.dateLabel.text = "date"
+        let section = dataStore[indexPath.section]
+        println(section.events)
         
         return cell
-    }
-    
-    // MARK: - Helper
-    func rangeOfDates(startDate : NSDate, endDate : NSDate) -> Array<NSDate> {
-        var dates = [NSDate]()
-        var currentDate = startDate
-        
-        while currentDate < endDate {
-            dates.append(currentDate)
-            currentDate = currentDate + 1.day
-        }
-        
-        return dates
     }
 }
