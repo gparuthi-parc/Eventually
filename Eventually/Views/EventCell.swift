@@ -21,26 +21,29 @@ class EventCell: UICollectionViewCell {
         super.layoutSubviews()
         self.backgroundColor = UIColor.whiteColor()
         
-        // Title Label
-        self.addSubview(titleLabel)
-        titleLabel.font = UIFont(name: fontName, size: 18)
-        layout(titleLabel) { titleLabel in
+        self.addLabelToCell(titleLabel, fontName: "HelveticaNeue-Medium", fontSize: 17)
+        self.addLabelToCell(locationLabel, fontName: "HelveticaNeue-Light", fontSize: 13)
+        self.addLabelToCell(dateLabel, fontName: "HelveticaNeue-Light", fontSize: 13)
+        
+        layout(titleLabel, locationLabel, dateLabel) { titleLabel, locationLabel, dateLabel in
             let superview = titleLabel.superview!
             
             titleLabel.width == (superview.width - 40)
             titleLabel.centerX == superview.centerX // left aligned
-            titleLabel.centerY == superview.centerY - 5
-        }
-        
-        // Date Label
-        self.addSubview(dateLabel)
-        dateLabel.font = UIFont(name: fontName, size: 14)
-        layout(dateLabel) { dateLabel in
-            let superview = dateLabel.superview!
+            titleLabel.centerY == superview.centerY - 18
             
-            dateLabel.width == 50
-            dateLabel.centerX == superview.right - 20 // right aligned
-            dateLabel.centerY == superview.centerY - 5
+            locationLabel.width == (superview.width - 40)
+            locationLabel.centerX == superview.centerX
+            locationLabel.centerY == titleLabel.centerY + 18
+            
+            dateLabel.width == (superview.width - 40)
+            dateLabel.centerX == superview.centerX
+            dateLabel.centerY == locationLabel.centerY + 15
         }
+    }
+    
+    func addLabelToCell(label: UILabel, fontName: String, fontSize: CGFloat) {
+        self.addSubview(label)
+        label.font = UIFont(name: fontName, size: fontSize)
     }
 }

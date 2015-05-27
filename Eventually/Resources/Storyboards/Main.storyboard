@@ -8,8 +8,8 @@
         <scene sceneID="nHm-wu-erX">
             <objects>
                 <collectionViewController id="IGf-zF-lw9" customClass="EventsViewController" customModule="Eventually" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="kYm-il-oMP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="kYm-il-oMP" customClass="EventListView" customModule="Eventually" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U72-At-xiN">
                             <size key="itemSize" width="320" height="50"/>
@@ -46,7 +46,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oQ5-dI-J93" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vg6-je-Bjb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="vg6-je-Bjb" customClass="NavigationBar" customModule="Eventually" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

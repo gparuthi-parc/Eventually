@@ -21,7 +21,7 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         let now = NSDate()
-        self.dataStore = self.getEvents(now - 1.week, end: now + 1.week, eventStore: self.eventStore)
+        self.dataStore = self.getEvents(now, end: now + 1.day, eventStore: self.eventStore)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -58,13 +58,17 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataStore.count
+        return 2
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> EventCell {
         let cell : EventCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! EventCell
-        let section = dataStore[indexPath.section]
-        println(section.events)
+//        let section = dataStore[indexPath.section]
+//        println(section.events)
+        
+        cell.titleLabel.text = "Interview at Triton Research"
+        cell.locationLabel.text = "270 Lafayette Street, Suite 1204"
+        cell.dateLabel.text = "11:50 – 1:40"
         
         return cell
     }

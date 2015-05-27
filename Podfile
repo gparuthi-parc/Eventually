@@ -8,15 +8,9 @@ pod 'Timepiece'
 pod 'Motif'
 pod 'Cartography'
 pod 'Dollar'
-pod 'Google-API-Client/Calendar'
-
-plugin 'cocoapods-keys', {
-  project: "Eventually",
-  keys: [
-    "GoogleAPISecret",
-    "GoogleAPIID"
-  ]
-}
+pod 'Alamofire'
+pod 'Realm'
+pod 'Argo'
 
 target :unit_tests, :exclusive => true do
   link_with 'UnitTests'
