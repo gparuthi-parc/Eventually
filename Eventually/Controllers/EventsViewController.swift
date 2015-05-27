@@ -36,7 +36,7 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(10, 0, 0, 0)
+        return UIEdgeInsetsMake(0, 0, 0, 0)
     }
 
     // MARK: - Collection view data source
@@ -58,7 +58,7 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 20
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> EventCell {

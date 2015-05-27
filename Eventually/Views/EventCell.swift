@@ -21,7 +21,7 @@ class EventCell: UICollectionViewCell {
         super.layoutSubviews()
         self.backgroundColor = UIColor(red:1,  green:1,  blue:1, alpha:1)
         
-        self.addLabelToCell(titleLabel, fontName: "HelveticaNeue-Medium", fontSize: 16)
+        self.addLabelToCell(titleLabel, fontName: "HelveticaNeue-Regular", fontSize: 16)
         self.addLabelToCell(locationLabel, fontName: "HelveticaNeue-Light", fontSize: 13)
         self.addLabelToCell(dateLabel, fontName: "HelveticaNeue-Light", fontSize: 13)
         self.addCalendarIndicatorToCell(calendarIndicator, color: UIColor(red:0.004,  green:0.553,  blue:1, alpha:1))
