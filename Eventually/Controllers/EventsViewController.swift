@@ -14,6 +14,7 @@ import Dollar
 class EventsViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     let eventStore = EKEventStore()
     let reuseIdentifier = "EventCell"
+    let headerReuseIdentifier = "HeaderCell"
     var dataStore = Array<EventCollection>()
 
     // MARK: - View lifecycle
@@ -58,7 +59,27 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return 4
+    }
+    
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 3
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSizeMake(self.view.frame.width, 26)
+    }
+    
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> DateHeaderCell {
+        
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            let header = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: headerReuseIdentifier, forIndexPath: indexPath) as! DateHeaderCell
+            header.dateLabel.text = "Wednesday, May 26th"
+            return header
+        default:
+            assert(false, "Unexpected element kind")
+        }
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> EventCell {
@@ -66,7 +87,7 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
 //        let section = dataStore[indexPath.section]
 //        println(section.events)
         
-        cell.titleLabel.text = "Interview at Triton Research"
+        cell.titleLabel.text = "Interview at Tech Company"
         cell.locationLabel.text = "270 Lafayette Street, Suite 1204"
         cell.dateLabel.text = "11:50 – 1:40"
         

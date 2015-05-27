@@ -8,10 +8,13 @@
 
 import UIKit
 
+@IBDesignable
 class NavigationBar: UINavigationBar {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.barTintColor = UIColor(red:0.957,  green:0.957,  blue:0.973, alpha:1)
+        self.barTintColor = UIColor.headerBackgroundColor()
+        self.layer.borderWidth = 2.0;
+        self.layer.borderColor = UIColor.headerBackgroundColor().CGColor
     }
 }

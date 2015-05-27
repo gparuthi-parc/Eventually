@@ -37,6 +37,12 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AktivGrotesk_Trial_LtIt.ttf</string>
+		<string>AktivGrotesk_Trial_Lt.ttf</string>
+		<string>AktivGrotesk_Trial_Rg.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
