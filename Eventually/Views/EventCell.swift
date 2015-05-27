@@ -15,31 +15,46 @@ class EventCell: UICollectionViewCell {
     var titleLabel = UILabel()
     var dateLabel = UILabel()
     var locationLabel = UILabel()
-    let fontName = "HelveticaNeue-Light"
+    var calendarIndicator = UIView()
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor(red:1,  green:1,  blue:1, alpha:1)
         
-        self.addLabelToCell(titleLabel, fontName: "HelveticaNeue-Medium", fontSize: 17)
+        self.addLabelToCell(titleLabel, fontName: "HelveticaNeue-Medium", fontSize: 16)
         self.addLabelToCell(locationLabel, fontName: "HelveticaNeue-Light", fontSize: 13)
         self.addLabelToCell(dateLabel, fontName: "HelveticaNeue-Light", fontSize: 13)
+        self.addCalendarIndicatorToCell(calendarIndicator, color: UIColor(red:0.004,  green:0.553,  blue:1, alpha:1))
         
         layout(titleLabel, locationLabel, dateLabel) { titleLabel, locationLabel, dateLabel in
             let superview = titleLabel.superview!
             
-            titleLabel.width == (superview.width - 40)
-            titleLabel.centerX == superview.centerX // left aligned
-            titleLabel.centerY == superview.centerY - 18
+            titleLabel.leadingMargin == superview.leadingMargin + 24
+            titleLabel.topMargin == superview.topMargin + 10
             
-            locationLabel.width == (superview.width - 40)
-            locationLabel.centerX == superview.centerX
-            locationLabel.centerY == titleLabel.centerY + 18
+            locationLabel.leadingMargin == superview.leadingMargin + 24
+            locationLabel.topMargin == superview.topMargin + 30
             
-            dateLabel.width == (superview.width - 40)
-            dateLabel.centerX == superview.centerX
-            dateLabel.centerY == locationLabel.centerY + 15
+            dateLabel.trailingMargin == superview.trailingMargin - 12
+            dateLabel.baseline == titleLabel.baseline
         }
+        
+        layout(calendarIndicator) { calendarIndicator in
+            let superview = calendarIndicator.superview!
+            
+            calendarIndicator.width == 10
+            calendarIndicator.height == 10
+            calendarIndicator.centerX == superview.leadingMargin + 2
+            calendarIndicator.centerY == superview.centerY
+        }
+    }
+    
+    // MARK: - Specialized Initializers
+    
+    func addCalendarIndicatorToCell(indicator: UIView, color: UIColor) {
+        self.addSubview(indicator)
+        indicator.backgroundColor = color
+        indicator.layer.cornerRadius = 5
     }
     
     func addLabelToCell(label: UILabel, fontName: String, fontSize: CGFloat) {

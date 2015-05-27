@@ -36,7 +36,7 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(0, 0, 0, 0)
+        return UIEdgeInsetsMake(10, 0, 0, 0)
     }
 
     // MARK: - Collection view data source
