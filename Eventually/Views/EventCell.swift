@@ -26,14 +26,16 @@ class EventCell: UICollectionViewCell {
         self.addLabelToCell(dateLabel, fontName: "AktivGroteskTrial-Light", fontSize: 13, textColor: UIColor.primaryTextColor())
         self.addCalendarIndicatorToCell(calendarIndicator, color: UIColor(red:0.004,  green:0.553,  blue:1, alpha:1))
         
+        self.addBottomBorderWithHeight(1, color: UIColor.borderColor(), leftOffset: 24, rightOffset: 0, bottomOffset: 0)
+        
         layout(titleLabel, locationLabel, dateLabel) { titleLabel, locationLabel, dateLabel in
             let superview = titleLabel.superview!
             
             titleLabel.leadingMargin == superview.leadingMargin + 24
-            titleLabel.centerY == superview.centerY - 6
+            titleLabel.centerY == superview.centerY - 5
             
             locationLabel.leadingMargin == superview.leadingMargin + 24
-            locationLabel.centerY == superview.centerY + 12
+            locationLabel.centerY == superview.centerY + 11
             
             dateLabel.trailingMargin == superview.trailingMargin - 12
             dateLabel.baseline == titleLabel.baseline

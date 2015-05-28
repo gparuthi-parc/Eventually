@@ -16,5 +16,10 @@ class NavigationBar: UINavigationBar {
         self.barTintColor = UIColor.headerBackgroundColor()
         self.layer.borderWidth = 2.0;
         self.layer.borderColor = UIColor.whiteColor().CGColor
+        
+        self.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.shadowImage = UIImage()
+        
+        self.addBottomBorderWithHeight(1, color: UIColor.borderColor(), leftOffset: 0, rightOffset: 0, bottomOffset: -1)
     }
 }

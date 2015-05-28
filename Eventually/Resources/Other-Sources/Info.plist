@@ -39,6 +39,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>ionicons.ttf</string>
 		<string>AktivGrotesk_Trial_LtIt.ttf</string>
 		<string>AktivGrotesk_Trial_Lt.ttf</string>
 		<string>AktivGrotesk_Trial_Rg.ttf</string>

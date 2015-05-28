@@ -11,6 +11,7 @@ pod 'Dollar'
 pod 'Alamofire'
 pod 'Realm'
 pod 'Argo'
+pod 'ionicons'
 
 target :unit_tests, :exclusive => true do
   link_with 'UnitTests'

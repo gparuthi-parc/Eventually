@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidFinishLaunching(application: UIApplication) {
         EventManager.sharedInstance.requestAccess()
+        UINavigationBar.appearance().barTintColor = UIColor.headerBackgroundColor()
     }
     
     func applicationWillResignActive(application: UIApplication) {

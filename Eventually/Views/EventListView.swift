@@ -12,6 +12,6 @@ import UIKit
 class EventListView: UICollectionView {
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.backgroundColor = UIColor(red:0.957,  green:0.957,  blue:0.973, alpha:1)
+        self.backgroundColor = UIColor.headerBackgroundColor()
     }
 }
