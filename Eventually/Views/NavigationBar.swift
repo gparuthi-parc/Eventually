@@ -15,6 +15,6 @@ class NavigationBar: UINavigationBar {
         
         self.barTintColor = UIColor.headerBackgroundColor()
         self.layer.borderWidth = 2.0;
-        self.layer.borderColor = UIColor.headerBackgroundColor().CGColor
+        self.layer.borderColor = UIColor.whiteColor().CGColor
     }
 }

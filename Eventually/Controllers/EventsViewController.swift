@@ -33,14 +33,14 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-            return CGSizeMake(self.view.frame.size.width, 60)
+            return CGSizeMake(self.view.frame.size.width, 50)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(0, 0, 0, 0)
     }
 
-    // MARK: - Collection view data source
+    // MARK: - CollectionView Data Source
     
     func getEvents(start: NSDate, end: NSDate, eventStore: EKEventStore) -> Array<EventCollection> {
         let allDates = NSDate.getRangeForDates(start, endDate: end)
@@ -71,15 +71,10 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> DateHeaderCell {
-        
-        switch kind {
-        case UICollectionElementKindSectionHeader:
-            let header = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: headerReuseIdentifier, forIndexPath: indexPath) as! DateHeaderCell
-            header.dateLabel.text = "Wednesday, May 26th"
-            return header
-        default:
-            assert(false, "Unexpected element kind")
-        }
+
+        let header = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: headerReuseIdentifier, forIndexPath: indexPath) as! DateHeaderCell
+        header.dateLabel.text = "Wednesday 5/27/15"
+        return header
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> EventCell {

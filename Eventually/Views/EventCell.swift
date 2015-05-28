@@ -42,9 +42,9 @@ class EventCell: UICollectionViewCell {
         layout(calendarIndicator) { calendarIndicator in
             let superview = calendarIndicator.superview!
             
-            calendarIndicator.width == 10
-            calendarIndicator.height == 10
-            calendarIndicator.centerX == superview.leadingMargin + 2
+            calendarIndicator.width == 8
+            calendarIndicator.height == 8
+            calendarIndicator.centerX == superview.leadingMargin + 5
             calendarIndicator.centerY == superview.centerY
         }
     }
@@ -54,6 +54,6 @@ class EventCell: UICollectionViewCell {
     func addCalendarIndicatorToCell(indicator: UIView, color: UIColor) {
         self.addSubview(indicator)
         indicator.backgroundColor = color
-        indicator.layer.cornerRadius = 5
+        indicator.layer.cornerRadius = 4
     }
 }
