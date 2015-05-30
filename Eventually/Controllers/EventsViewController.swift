@@ -79,8 +79,14 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> EventCell {
         let cell : EventCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! EventCell
-//        let section = dataStore[indexPath.section]
-//        println(section.events)
+       
+        let sectionCount = collectionView.numberOfSections()
+        let rowCount = collectionView.numberOfItemsInSection(indexPath.section)
+        if (indexPath.row == rowCount - 1) {
+            // last cell, do nothing with borders
+        } else {
+            cell.addBorderToCell()
+        }
         
         cell.titleLabel.text = "Interview at Tech Company"
         cell.locationLabel.text = "270 Lafayette Street, Suite 1204"

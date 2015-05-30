@@ -26,8 +26,6 @@ class EventCell: UICollectionViewCell {
         self.addLabelToCell(dateLabel, fontName: "AktivGroteskTrial-Light", fontSize: 13, textColor: UIColor.primaryTextColor())
         self.addCalendarIndicatorToCell(calendarIndicator, color: UIColor(red:0.004,  green:0.553,  blue:1, alpha:1))
         
-        self.addBottomBorderWithHeight(1, color: UIColor.borderColor(), leftOffset: 24, rightOffset: 0, bottomOffset: 0)
-        
         layout(titleLabel, locationLabel, dateLabel) { titleLabel, locationLabel, dateLabel in
             let superview = titleLabel.superview!
             
@@ -52,6 +50,11 @@ class EventCell: UICollectionViewCell {
     }
     
     // MARK: - Specialized Initializers
+    
+    // is called from events view controller. better if it belongs in the view model.
+    func addBorderToCell() {
+        self.addBottomBorderWithHeight(1, color: UIColor.borderColor(), leftOffset: 24, rightOffset: 0, bottomOffset: 0)
+    }
     
     func addCalendarIndicatorToCell(indicator: UIView, color: UIColor) {
         self.addSubview(indicator)
