@@ -13,9 +13,10 @@ import Alamofire
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
-    func applicationDidFinishLaunching(application: UIApplication) {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         EventManager.sharedInstance.requestAccess()
-        UINavigationBar.appearance().barTintColor = UIColor.headerBackgroundColor()
+        
+        return true
     }
     
     func applicationWillResignActive(application: UIApplication) {
