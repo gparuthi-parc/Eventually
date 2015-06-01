@@ -21,9 +21,9 @@ class EventCell: UICollectionViewCell {
         super.layoutSubviews()
         self.backgroundColor = UIColor.whiteColor()
         
-        self.addLabelToCell(titleLabel, fontName: "AktivGroteskTrial-Regular", fontSize: 16, textColor: UIColor.primaryTextColor())
-        self.addLabelToCell(locationLabel, fontName: "AktivGroteskTrial-Light", fontSize: 13, textColor: UIColor.primaryTextColor())
-        self.addLabelToCell(dateLabel, fontName: "AktivGroteskTrial-Light", fontSize: 13, textColor: UIColor.primaryTextColor())
+        self.addLabelToView(titleLabel, fontName: UIFont.appFont(.Light), fontSize: 16, textColor: UIColor.primaryTextColor())
+        self.addLabelToView(locationLabel, fontName: UIFont.appFont(.Light), fontSize: 13, textColor: UIColor.primaryTextColor())
+        self.addLabelToView(dateLabel, fontName: UIFont.appFont(.Light), fontSize: 13, textColor: UIColor.primaryTextColor())
         self.addCalendarIndicatorToCell(calendarIndicator, color: UIColor(red:0.004,  green:0.553,  blue:1, alpha:1))
         
         layout(titleLabel, locationLabel, dateLabel) { titleLabel, locationLabel, dateLabel in

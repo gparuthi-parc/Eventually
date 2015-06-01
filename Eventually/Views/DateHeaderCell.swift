@@ -17,7 +17,7 @@ class DateHeaderCell: UICollectionReusableView {
         super.layoutSubviews()
         
         self.addSubview(dateLabel)
-        self.addLabelToCell(dateLabel, fontName: "AktivGroteskTrial-Light", fontSize: 14, textColor: UIColor.headerTextColor())
+        self.addLabelToView(dateLabel, fontName: "AktivGroteskTrial-Light", fontSize: 14, textColor: UIColor.headerTextColor())
         self.backgroundColor = UIColor.headerBackgroundColor()
         
         self.addBottomBorderWithHeight(1, color: UIColor.borderColor())
