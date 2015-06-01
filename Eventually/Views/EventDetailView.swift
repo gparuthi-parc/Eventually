@@ -6,8 +6,12 @@
 //  Copyright (c) 2015 David Barsky. All rights reserved.
 //
 
-import Cocoa
+import UIKit
+import Cartography
 
 class EventDetailView: UIView {
-
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
 }

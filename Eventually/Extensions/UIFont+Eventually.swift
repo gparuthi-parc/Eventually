@@ -6,8 +6,23 @@
 //  Copyright (c) 2015 David Barsky. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
-class UIFont_Eventually: UIFont {
-
+extension UIFont {
+    
+    enum FontWeight {
+        case Light, Regular
+    }
+    
+    class func appFont(weight: FontWeight) -> String {
+        let lightFont = "AktivGroteskTrial-Light"
+        let regularFont = "AktivGroteskTrial-Regular"
+        
+        switch weight {
+        case .Light:
+            return lightFont
+        case .Regular:
+            return regularFont
+        }
+    }
 }

@@ -10,7 +10,7 @@ import UIKit
 import QuartzCore
 
 extension UIView {
-    func addLabelToCell(label: UILabel, fontName: String, fontSize: CGFloat, textColor: UIColor) {
+    func addLabelToView(label: UILabel, fontName: String, fontSize: CGFloat, textColor: UIColor) {
         self.addSubview(label)
         label.font = UIFont(name: fontName, size: fontSize)
         label.textColor = textColor

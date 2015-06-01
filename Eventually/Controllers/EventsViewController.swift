@@ -15,14 +15,16 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
     let eventStore = EKEventStore()
     let reuseIdentifier = "EventCell"
     let headerReuseIdentifier = "HeaderCell"
-    var dataStore = Array<EventCollection>()
+//    var dataStore = [EKEvent]()
+    var dataStore = [Int]()
 
     // MARK: - View lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let now = NSDate()
-        self.dataStore = self.getEvents(now, end: now + 1.day, eventStore: self.eventStore)
+//        self.dataStore = self.getEvents(now, end: now + 1.day, eventStore: self.eventStore)
+        self.dataStore = [1, 2, 3, 4, 5]
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -77,16 +79,28 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
         return header
     }
     
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> EventCell {
-        let cell : EventCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! EventCell
-       
+    override func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        
         let sectionCount = collectionView.numberOfSections()
         let rowCount = collectionView.numberOfItemsInSection(indexPath.section)
-        if (indexPath.row == rowCount - 1) {
+        if (indexPath.row == rowCount - 1 ) {
             // last cell, do nothing with borders
         } else {
-            cell.addBorderToCell()
+            cell.addBottomBorderWithHeight(1, color: UIColor.borderColor(), leftOffset: 24, rightOffset: 0, bottomOffset: 0)
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowEvent" {
+            let navigationController: UINavigationController = segue.destinationViewController as! UINavigationController
+            let detailViewController: EventDetailViewController = navigationController.viewControllers.first as! EventDetailViewController
+            let indexpath = self.collectionView!.indexPathForCell(sender as! EventCell)
+            detailViewController.data = self.dataStore[indexpath!.row]
+        }
+    }
+    
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> EventCell {
+        let cell : EventCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! EventCell
         
         cell.titleLabel.text = "Interview at Tech Company"
         cell.locationLabel.text = "270 Lafayette Street, Suite 1204"
