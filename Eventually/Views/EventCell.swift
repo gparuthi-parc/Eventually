@@ -12,10 +12,10 @@ import Cartography
 @IBDesignable
 class EventCell: UICollectionViewCell {
     
-    var titleLabel = UILabel()
-    var dateLabel = UILabel()
-    var locationLabel = UILabel()
-    var calendarIndicator = UIView()
+    let titleLabel = UILabel()
+    let dateLabel = UILabel()
+    let locationLabel = UILabel()
+    let calendarIndicator = UIView()
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -26,7 +26,7 @@ class EventCell: UICollectionViewCell {
         self.addLabelToView(dateLabel, fontName: UIFont.appFont(.Light), fontSize: 13, textColor: UIColor.primaryTextColor())
         self.addCalendarIndicatorToCell(calendarIndicator, color: UIColor(red:0.004,  green:0.553,  blue:1, alpha:1))
         
-        layout(titleLabel, locationLabel, dateLabel) { titleLabel, locationLabel, dateLabel in
+        constrain(titleLabel, locationLabel, dateLabel) { titleLabel, locationLabel, dateLabel in
             let superview = titleLabel.superview!
             
             titleLabel.leadingMargin == superview.leadingMargin + 24
@@ -39,7 +39,7 @@ class EventCell: UICollectionViewCell {
             dateLabel.baseline == titleLabel.baseline
         }
         
-        layout(calendarIndicator) { calendarIndicator in
+        constrain(calendarIndicator) { calendarIndicator in
             let superview = calendarIndicator.superview!
             
             calendarIndicator.width == 8

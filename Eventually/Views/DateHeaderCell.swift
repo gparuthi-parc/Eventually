@@ -23,7 +23,7 @@ class DateHeaderCell: UICollectionReusableView {
         self.addBottomBorderWithHeight(1, color: UIColor.borderColor())
         self.addTopBorderWithHeight(1, color: UIColor.borderColor())
         
-        layout(dateLabel) { dateLabel in
+        constrain(dateLabel) { dateLabel in
             let superview = dateLabel.superview!
 
             dateLabel.centerY == superview.centerY + 3
