@@ -42,7 +42,7 @@ class EventDetailView: UIView {
         self.dayLabel.text = "Tuesday, August 25"
         
         view.addLabelToView(locationLabel, fontName: UIFont.appFont(.Light), fontSize: 16, textColor: UIColor.primaryTextColor())
-        self.locationLabel.text = "101 Arch Stree, Boston"
+        self.locationLabel.text = "101 Arch Street, Boston"
         
         constrain(titleLabel, dayLabel, locationLabel) { titleLabel, dayLabel, locationLabel in
             let superview = titleLabel.superview!

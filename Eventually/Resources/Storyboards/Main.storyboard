@@ -43,7 +43,11 @@
                     <toolbarItems>
                         <barButtonItem title="Item" id="pQc-nG-fOJ"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="iu6-fv-bnG"/>
-                        <barButtonItem systemItem="add" id="HeU-vI-G9A"/>
+                        <barButtonItem systemItem="add" id="HeU-vI-G9A">
+                            <connections>
+                                <segue destination="jqr-Ha-vcM" kind="presentation" id="bke-ZW-KHQ"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="byg-3C-BfP"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -51,6 +55,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxM-Va-JeL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3853.5" y="5.5"/>
+        </scene>
+        <!--Compose Event View Controller-->
+        <scene sceneID="Wp5-Ve-FSw">
+            <objects>
+                <viewController id="z9f-Sq-BwX" customClass="ComposeEventViewController" customModule="Eventually" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GIN-Hy-ulH"/>
+                        <viewControllerLayoutGuide type="bottom" id="7ly-Ti-LHG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tjr-sw-WaQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DKO-b2-wYa">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zmE-ou-99T">
+                            <connections>
+                                <action selector="cancelButtonWasPressed:" destination="z9f-Sq-BwX" id="Auo-Wt-rYV"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="y6s-KV-gSo">
+                            <connections>
+                                <action selector="saveButtonWasPressed:" destination="z9f-Sq-BwX" id="3fN-eK-0dZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btg-RK-efN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4859.5" y="471.5"/>
         </scene>
         <!--Event Detail View Controller-->
         <scene sceneID="X3c-Wu-2bL">
@@ -128,6 +163,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Tr-0M-gNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4364.5" y="-433.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="piI-9v-p1h">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jqr-Ha-vcM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KFD-0p-mc9" customClass="NavigationBar" customModule="Eventually" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="z9f-Sq-BwX" kind="relationship" relationship="rootViewController" id="1Lq-Ul-F92"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uyy-p6-B5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4364.5" y="471.5"/>
         </scene>
     </scenes>
 </document>
