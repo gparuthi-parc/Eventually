@@ -64,7 +64,7 @@
                         <viewControllerLayoutGuide type="top" id="GIN-Hy-ulH"/>
                         <viewControllerLayoutGuide type="bottom" id="7ly-Ti-LHG"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Tjr-sw-WaQ">
+                    <view key="view" contentMode="scaleToFill" id="Tjr-sw-WaQ" customClass="ComposeEventView" customModule="Eventually" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

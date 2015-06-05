@@ -16,6 +16,7 @@ PODS:
   - Realm/Headers (0.92.4)
   - Runes (1.2.2)
   - Specta (1.0.0)
+  - SZTextView (1.2.1)
   - Timepiece (0.3.2)
 
 DEPENDENCIES:
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - OHHTTPStubs
   - Realm
   - Specta
+  - SZTextView
   - Timepiece
 
 SPEC CHECKSUMS:
@@ -46,6 +48,7 @@ SPEC CHECKSUMS:
   Realm: 4267bae2eb7cf4a1e06ef3dfa7fe96024b28074c
   Runes: 90c9bba2be981c3777ac490aea0fc0c1acff0f97
   Specta: 96fe05fe5c7348b5223f85e862904f6e832abb14
+  SZTextView: 906df45afd3c1b24fc5252088d5ef8061513c238
   Timepiece: 28bababfe86526450a26221460a8cca8d44e55fd
 
-COCOAPODS: 0.37.1
+COCOAPODS: 0.37.2
