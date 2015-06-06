@@ -9,13 +9,11 @@
 import UIKit
 import EventKit
 import Timepiece
-import Dollar
 
 class EventsViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     let eventStore = EKEventStore()
     let reuseIdentifier = "EventCell"
     let headerReuseIdentifier = "HeaderCell"
-//    var dataStore = [EKEvent]()
     var dataStore = [Int]()
 
     // MARK: - View lifecycle
@@ -23,7 +21,6 @@ class EventsViewController: UICollectionViewController, UICollectionViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         let now = NSDate()
-//        self.dataStore = self.getEvents(now, end: now + 1.day, eventStore: self.eventStore)
         self.dataStore = [1, 2, 3, 4, 5]
     }
 

@@ -20,7 +20,7 @@ class ComposeEventView: UIView {
 
         self.addSubview(titleInput)
         titleInput.placeholder = "Event Title..."
-        titleInput.font = UIFont(name: UIFont.appFont(.Light), size: 16)
+        titleInput.font = UIFont(name: UIFont.appFont(.Light), size: 18)
         constrain(titleInput) { titleInput in
             let superview = titleInput.superview!
 

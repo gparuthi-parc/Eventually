@@ -5,33 +5,33 @@ PODS:
     - Runes (~> 1.2)
   - Box (1.2.2)
   - Cartography (0.5.0)
-  - Dollar (3.0.0)
+  - EasyAnimation (0.6.1)
   - Expecta (1.0.0)
   - ionicons (2.0.1)
-  - Motif (0.1.2)
   - OCMock (3.1.2)
   - OHHTTPStubs (4.0.1)
-  - Realm (0.92.4):
-    - Realm/Headers (= 0.92.4)
-  - Realm/Headers (0.92.4)
+  - PermissionScope (0.4)
+  - Realm (0.93.1):
+    - Realm/Headers (= 0.93.1)
+  - Realm/Headers (0.93.1)
+  - RealmSwift (0.93.1):
+    - Realm (= 0.93.1)
   - Runes (1.2.2)
   - Specta (1.0.0)
-  - SZTextView (1.2.1)
   - Timepiece (0.3.2)
 
 DEPENDENCIES:
   - Alamofire
   - Argo
   - Cartography
-  - Dollar
+  - EasyAnimation
   - Expecta
   - ionicons
-  - Motif
   - OCMock
   - OHHTTPStubs
-  - Realm
+  - PermissionScope
+  - RealmSwift
   - Specta
-  - SZTextView
   - Timepiece
 
 SPEC CHECKSUMS:
@@ -39,16 +39,16 @@ SPEC CHECKSUMS:
   Argo: 0adbc4433ad29e202875355610d1a03a74928155
   Box: a92e8aa4c099e6bc0733829665caf9e668ef53b8
   Cartography: 774e5cc446f5a6bca5d4345c5aa6af9a1fe74dc6
-  Dollar: 4df780ce1baa410d71e423fee07646abb1106909
+  EasyAnimation: 6e12f74ba62c9d7c1995d5399039600cdf29a964
   Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
   ionicons: c7b0867373392e85c17f613d19ade04ccfbe5a7c
-  Motif: 019df12cd6f816bbfafaa9363b21a1158b8efb5a
   OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
   OHHTTPStubs: 69b1d48b7dfe838a355fdf48d8592d1042e3d85f
-  Realm: 4267bae2eb7cf4a1e06ef3dfa7fe96024b28074c
+  PermissionScope: 0d79c49b4a792fac26850702f4b667ae13378dd7
+  Realm: 694b93846a0772c904f9e0cc3559d1bc856d931e
+  RealmSwift: feeac2930716d9a04ba45637add4abe994fa05fd
   Runes: 90c9bba2be981c3777ac490aea0fc0c1acff0f97
   Specta: 96fe05fe5c7348b5223f85e862904f6e832abb14
-  SZTextView: 906df45afd3c1b24fc5252088d5ef8061513c238
   Timepiece: 28bababfe86526450a26221460a8cca8d44e55fd
 
 COCOAPODS: 0.37.2

@@ -5,14 +5,13 @@ use_frameworks!
 
 # Add Application pods here
 pod 'Timepiece'
-pod 'Motif'
 pod 'Cartography'
-pod 'Dollar'
 pod 'Alamofire'
-pod 'Realm'
 pod 'Argo'
 pod 'ionicons'
-pod 'SZTextView'
+pod 'EasyAnimation'
+pod 'PermissionScope'
+pod 'RealmSwift'
 
 target :unit_tests, :exclusive => true do
   link_with 'UnitTests'
